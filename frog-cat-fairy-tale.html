@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff3db">
+<title>月亮收下了蛙蛙和猫猫的心愿</title>
+<style>
+  :root { color-scheme: light; --ink:#524344; --pink:#f4a9ae; --cream:#fff9e9; --green:#97c99c; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:grid; place-items:center; padding:48px 18px;
+    color:var(--ink); font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    background-color:#fff0d6;
+    background-image: radial-gradient(circle at 15px 15px, rgba(255,255,255,.7) 2px, transparent 2.8px);
+    background-size:30px 30px;
+    overflow-x:hidden;
+  }
+  .emoji-field { position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
+  .emoji-tile { position:absolute; inset:0; display:grid; grid-template-columns:repeat(9,1fr); opacity:.22; font-size:clamp(22px,4vw,48px); }
+  .emoji-column { position:absolute; top:-100vh; width:11.111%; display:flex; flex-direction:column; align-items:center; gap:clamp(20px,4vh,42px); animation:emoji-column-fall 78s linear infinite; }
+  .emoji-column:nth-child(2) { left:11.111%; animation-duration:81s; animation-delay:-3s; }
+  .emoji-column:nth-child(3) { left:22.222%; animation-duration:84s; animation-delay:-6s; }
+  .emoji-column:nth-child(4) { left:33.333%; animation-duration:87s; animation-delay:-9s; }
+  .emoji-column:nth-child(5) { left:44.444%; animation-duration:90s; animation-delay:-12s; }
+  .emoji-column:nth-child(6) { left:55.555%; animation-duration:93s; animation-delay:-15s; }
+  .emoji-column:nth-child(7) { left:66.666%; animation-duration:96s; animation-delay:-18s; }
+  .emoji-column:nth-child(8) { left:77.777%; animation-duration:99s; animation-delay:-21s; }
+  .emoji-column:nth-child(9) { left:88.888%; animation-duration:102s; animation-delay:-24s; }
+  .emoji-column span:nth-child(even) { transform:rotate(180deg); }
+  @keyframes emoji-column-fall { from { transform:translateY(0); } to { transform:translateY(220vh); } }  main { width:min(760px,100%); }
+  .notebook {
+    position:relative; padding:clamp(30px,7vw,62px) clamp(24px,8vw,76px) 38px;
+    border:3px solid #d8aa75; border-radius:22px 28px 24px 20px;
+    background:
+      radial-gradient(circle, rgba(111,166,202,.30) 1px, transparent 1.5px) 0 0 / 18px 18px,
+      var(--cream);
+    box-shadow:0 15px 0 #c79569, 0 23px 38px rgba(101,72,54,.18), inset 0 0 0 7px rgba(255,255,255,.58);
+  }
+  .notebook::before { content:""; position:absolute; left:15px; top:24px; bottom:24px; width:17px; background:radial-gradient(circle, #dfb784 0 4px, transparent 4.5px) center top/17px 36px repeat-y; }
+  .notebook::after { content:""; position:absolute; top:-13px; right:22px; width:72px; height:27px; border:2px solid #efa6a5; border-radius:5px; background:#ffd4cc; transform:rotate(7deg); box-shadow:0 2px 0 rgba(130,82,72,.1); }
+
+  .sticker { position:absolute; z-index:1; font-size:clamp(28px,5vw,42px); filter:drop-shadow(0 2px 0 white); }
+  .sticker.one { top:24px; right:32px; transform:rotate(12deg); }
+  .sticker.two { bottom:22px; right:28px; transform:rotate(-12deg); }
+  header { text-align:center; margin-bottom:14px; }
+  .eyebrow { margin:0 0 5px; color:#b17b68; font-size:13px; letter-spacing:.22em; }
+  h1 { margin:0; font-size:clamp(25px,5vw,38px); line-height:1.35; color:#76504d; text-shadow:2px 2px 0 #fff; }
+  .subtitle { margin:7px 0 0; color:#9b7670; font-size:14px; }
+  .story { font-size:clamp(16px,2.35vw,18px); line-height:2; letter-spacing:.035em; white-space:pre-line; }
+  .story p { margin:0 0 12px; }
+  .story strong { color:#d87883; font-weight:700; }
+  footer { margin-top:15px; text-align:center; color:#a77b69; font-size:14px; }
+  .heart { display:inline-block; color:#e88c98; animation:heart 1.7s ease-in-out infinite; }
+  @keyframes heart { 50% { transform:scale(1.22); } }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; scroll-behavior:auto !important; } }
+</style>
+</head>
+<body>
+<div class="emoji-field" aria-hidden="true">
+  <div class="emoji-tile">
+    <div class="emoji-column" style="left:0%">
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+    </div>
+    <div class="emoji-column" style="left:11.111%">
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+    </div>
+    <div class="emoji-column" style="left:22.222%">
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+    </div>
+    <div class="emoji-column" style="left:33.333%">
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+    </div>
+    <div class="emoji-column" style="left:44.444%">
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+    </div>
+    <div class="emoji-column" style="left:55.556%">
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+    </div>
+    <div class="emoji-column" style="left:66.667%">
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+    </div>
+    <div class="emoji-column" style="left:77.778%">
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+    </div>
+    <div class="emoji-column" style="left:88.889%">
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+      <span>🐸</span>
+      <span>🐱</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <article class="notebook">
+    <span class="sticker one" aria-hidden="true">🌙</span>
+    <span class="sticker two" aria-hidden="true">⭐</span>
+    <header>
+      <p class="eyebrow">给最喜欢的猫猫的一页童话</p>
+      <h1>月亮收下了蛙蛙和猫猫的心愿</h1>
+      <p class="subtitle">猫蛙99！</p>
+    </header>
+    <section class="story" aria-label="童话故事">
+      <p>月圆之夜，东区学生宿舍楼下，银色月光把小路照得亮晶晶。蛙蛙正想给猫猫一个惊喜，忽然被月光一裹，竟变成了一只毛茸茸的小狗！</p>
+      <p>“汪！”蛙蛙刚摇摇尾巴，猫猫就吓得耳朵竖起，躲到了花坛后。蛙蛙赶紧坐好，把最熟悉的青蛙笑脸摆出来：“别怕呀，我是蛙蛙！你看，我还记得你最爱听的那首晚安歌。”</p>
+      <p>蛙蛙轻轻唱起歌，又把猫猫落下的小星星发夹叼到她面前。猫猫探出脑袋，认出了那双亮晶晶的眼睛。“真的是你呀！”她笑着摸摸蛙蛙的头。蛙蛙开心地摇尾巴：“不管变成什么样，我都还是你的蛙蛙；要是你愿意，我也想永远做你的小狗狗。”</p>
+      <p>猫猫的脸颊红得像月亮旁边的小云朵。她把发夹别好，牵起蛙蛙的爪子：“那你要陪我散步、听我说话，我也会一直陪着你。”蛙蛙郑重点头，猫猫把额头轻轻贴上她的额头。</p>
+      <p>月亮看着他们，悄悄把祝福撒满东区。从那以后，蛙蛙和猫猫一起分享晚安歌、星星和好多好多拥抱，幸福地生活在了一起。<strong>而每个圆月夜，他们都记得：最好的惊喜，是认出彼此，也选择彼此。</strong></p>
+    </section>
+    <footer>蛙蛙和猫猫的故事，今晚也在继续 <span class="heart">♥</span></footer>
+  </article>
+</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
